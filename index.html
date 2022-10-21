@@ -1,10 +1,20 @@
 <!doctype html>
 <head>
   <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,700;1,200;1,300;1,400;1,500;1,700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="index.js" type="module" defer></script>
 </head>
 <body class="on">
+  <div style="display:none" class="modal" id="overlay-modal">
+    <p>On/Off is for desktop devices only. <a style="color: black;" href="https://pinnie.mypinata.cloud/ipfs/QmWfB3dUW5FbdTKqDzvS95zHJzKq1L6sfBPLG9c3vwKg2G?stream=true" target="_blank" rel="noreferrer noopener">Watch the video</a> explaining how Pinata used this game, Pinata submarine, and NFTs to show off NFT token gating of content.</p>
+  </div>
+  <div style="display:none" class="modal" id="watch-video">
+    <p><a style="color: #ff009e;" href="https://pinnie.mypinata.cloud/ipfs/QmWfB3dUW5FbdTKqDzvS95zHJzKq1L6sfBPLG9c3vwKg2G?stream=true" target="_blank" rel="noreferrer noopener">Watch the video</a> explaining how Pinata used this game, Pinata Submarine, and NFTs to show off NFT token gating of content.</p>
+  </div>
+
   <svg id="title" viewBox="0 0 768 480">
     <path class="light" d="M188 192h40v-64h-40v64zm0 16h-16v-96h72v96h-56zm128-80h-40v80h-16v-96h72v96h-16v-80z"/>
     <path class="dark" d="M540 128v24h40v16h-40v40h-16v-96h72v16h-56zm-88 24h40v16h-40v40h-16v-96h72v16h-56v24zm-48-24h-40v64h40v-64zm16 0v80h-72v-96h72v16z"/>
@@ -22,7 +32,6 @@
         <path class="stars" d="M435 376.4l-3.1 1.5h-.6a.5.5 0 0 1-.2-.5l.6-3.3-2.5-2.4a.5.5 0 0 1-.2-.5c0-.2.3-.4.5-.4l3.4-.5 1.6-3a.6.6 0 0 1 1 0l1.6 3 3.4.5c.2 0 .4.2.5.4 0 .2 0 .4-.2.5l-2.5 2.4.6 3.3c0 .2 0 .4-.2.5h-.6l-3.1-1.5zm-102 0l-3.1 1.5h-.6a.5.5 0 0 1-.2-.5l.6-3.3-2.5-2.4a.5.5 0 0 1-.2-.5c0-.2.3-.4.5-.4l3.4-.5 1.6-3a.6.6 0 0 1 1 0l1.6 3 3.4.5c.2 0 .4.2.5.4 0 .2 0 .4-.2.5l-2.5 2.4.6 3.3c0 .2 0 .4-.2.5h-.6l-3.1-1.5z"/>
       </g>
     </g>
-    <path class="dark" d="M175 443h-6v-2h6v-5h-8v-2h10v16h-10v-2h8v-5zm122 5h6v-5h-6v5zm-2 0v-14h10v16h-10v-2zm2-7h6v-5h-6v5zm-30-5h-8v-2h10v9h-8v5h8v2h-10v-9h8v-5zm-108 12v-12h-4v-2h6v14h4v2h-10v-2h4zm128 0v-12h-4v-2h6v14h4v2h-10v-2h4zm-8-14h2v16h-10v-16h8zm0 2h-6v12h6v-12zm-72 7v7h-4v-16h10v16h-2v-7h-4zm0-2h4v-5h-4v5zm154 2v7h-4v-16h10v16h-2v-7h-4zm0-2h4v-5h-4v5zm80 2v7h-4v-16h10v16h-2v-7h-4zm0-2h4v-5h-4v5zm62 2v7h-4v-16h10v16h-2v-7h-4zm0-2h4v-5h-4v5zm80 2v7h-4v-16h10v16h-2v-7h-4zm0-2h4v-5h-4v5zm-234 2v7h-4v-16h10v9h-2v7h-2v-7h-2zm0-2h4v-5h-4v5zm104 2v7h-4v-16h10v9h-2v7h-2v-7h-2zm0-2h4v-5h-4v5zm142 2v7h-4v-16h10v9h-2v7h-2v-7h-2zm0-2h4v-5h-4v5zm-412 0h4v2h-4v7h-4v-16h4v7zm16 2h-2v-2h4v9h-10v-16h10v2h-6v12h4v-5zm32-2h4v2h-4v5h6v2h-10v-16h10v2h-6v5zm308 0h4v2h-4v5h6v2h-10v-16h10v2h-6v5zm-134 7h4v-14h2v16h-10v-16h4v14zm12-14h6v16h-2v-14h-4v14h-4v-16h4zm98 0h6v16h-2v-14h-4v14h-4v-16h4zm104 0h6v16h-2v-14h-4v14h-4v-16h4zm-400 0h6v16h-2v-14h-1v14h-2v-14h-1v14h-4v-16h4zm352 0h6v16h-2v-14h-1v14h-2v-14h-1v14h-4v-16h4zm-418 14v2h-10v-2h8v-5h-8v-9h10v2h-6v5h6v7zm96 0v2h-10v-2h8v-5h-8v-9h10v2h-6v5h6v7zm-112 0v-12h-6v-2h10v16h-10v-9h2v7h4zm389 0v-12h-3v-2h10v2h-3v12h3v2h-10v-2h3zm80 0v-12h-3v-2h10v2h-3v12h3v2h-10v-2h3zm-269-12v12h4v-12h-4zm0-2h6v16h-10v-16h4zm92 2v12h4v-12h-4zm0-2h6v16h-10v-16h4zm202 2v12h4v-12h-4zm0-2h6v16h-10v-16h4zm-140 2v12h4v-12h-4zm0-2h6v16h-10v-16h4zm-98 2v12h4v-12h-4zm0-2h6v16h-10v-16h4zm-20 2v12h4v-12h-4zm0-2h6v16h-10v-16h4zm178 14h6v2h-10v-16h4v14zm-364-14h2v7h-2v-7zm0 9h2v7h-2v-7zm246-2v2h-4v-2h4zm-92 0v2h-4v-2h4zm-66-1h2v4h-2v-4zm194-2h8v8h-8v-8zm-154 0h8v8h-8v-8z"/>
   </svg>
 
   <svg id="controls" viewBox="0 0 768 480" hidden>

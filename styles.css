@@ -225,3 +225,17 @@ kbd {
 span {
   margin-left: 10px;
 }
+
+.modal {
+  font-family: 'Work Sans', sans-serif;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  /* background: #ffe000; */
+  color: #000000;
+  text-align: center;
+}
