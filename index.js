@@ -23,15 +23,18 @@ import Controls from "./src/controls.js";
 import Editor from "./src/editor.js";
 
 window.onload = function () {
-  const isMobile = navigator.userAgentData.mobile;
-  if (isMobile) {
-    const modal = document.getElementById("overlay-modal");
-    modal.style.display = "block";
+  function isMobile() {
+    const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+    return mobileRegex.test(navigator.userAgent);
   }
 
-  const watchVideo = document.getElementById("watch-video");
-  if (watchVideo && !isMobile) {
-    watchVideo.style.display = "block";
+  const touchcontrols = document.querySelector(".touch-screen");
+  console.log(touchcontrols)
+  console.log(isMobile())
+  if (isMobile()) {
+    touchcontrols.style.display = "block";
+  } else {
+    touchcontrols.style.display = "none";
   }
 };
 
@@ -103,6 +106,8 @@ class Scene extends Body {
 
     this.on = true;
     this.stars.value = this.index;
+    //  Save score
+    localStorage.setItem("stars-collected", this.stars.value.toString());
     while (this.bars.length) this.bars.pop().remove();
     while (this.spikes.length) this.spikes.pop().remove();
 
@@ -229,7 +234,7 @@ class Scene extends Body {
     this.guy.y += Math.min(bottom, Math.max(top, this.guy.vy));
 
     if (bottom === 0) {
-      this.guy.vy = upKey() ? -scale(1200) : 0;
+      this.guy.vy = upKey() ? -scale(2000) : 0;
       if (upKey()) JUMP_FX.play();
     } else {
       this.guy.vy = Math.min(scale(600), this.guy.vy + scale(120));
@@ -249,20 +254,36 @@ class Game {
     this.controls = new Controls(this);
     this.scene = new Scene(this, levels);
     this.editor = new Editor(
-      [
         [
-          [100, 300],
-          [500, 300],
-          [[84, 361, 362, 48, 1]],
-          [[446, 401, 176, 8, 1, "up"]],
+            [
+                [100, 300],
+                [500, 300],
+                [[84, 361, 362, 48, 1]],
+                [[446, 401, 176, 8, 1, "up"]],
+            ],
         ],
-      ],
-      this
+        this
     );
     this.dialog = document.getElementById("dialog");
-    onPress(1, this.toggle.bind(this));
+
+    // Set up keyboard controls
     document.addEventListener("keydown", this.keydown.bind(this));
-  }
+
+    // Set up toggle button functionality
+    const toggleButton = document.querySelector('#toggle-button');
+    if (toggleButton) {
+        // Add mouse events
+        toggleButton.addEventListener('mousedown', () => this.toggle());
+        
+        // Add touch events for mobile devices
+        toggleButton.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Prevent scrolling
+            this.toggle();
+        });
+    }
+
+    onPress(1, this.toggle.bind(this));
+}
 
   toggle() {
     this.scene.on = !this.scene.on;

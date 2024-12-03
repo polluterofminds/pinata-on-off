@@ -1,5 +1,5 @@
 :root {
-  --accent: #8000DB;
+  --accent: #582cd6;
   --secondary: #fff;
 }
 
@@ -58,8 +58,12 @@ svg {
 
 /*  Guy  */
 
+#guy {
+  margin-top: 10px;
+}
+
 #inner-guy {
-  transform-origin: 13px;
+  transform-origin: 13px;  
 }
 
 .left #inner-guy {
@@ -238,4 +242,56 @@ span {
   /* background: #ffe000; */
   color: #000000;
   text-align: center;
+}
+
+.touch-screen {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #582cd6;
+  z-index: 1000;
+}
+
+.control-buttons {
+  height: 50px;
+  width: auto;
+  background-color: transparent;
+}
+
+#up-button {
+  width: 100vw;
+  margin: auto;
+  background: transparent;
+  border: solid black 1px;
+}
+
+#left-button {
+  width: 33vw;
+  margin: auto;
+}
+
+#toggle-button {
+  width: 33vw;
+  margin: auto;
+}
+
+#right-button {
+  width: 33vw;
+  margin: auto;
+}
+
+#direction-and-toggle {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+}
+
+#direction-and-toggle button {
+  background: transparent;
+  border: solid black 1px;
+}
+
+.enabled {
+  background-color: #eee!important;
 }

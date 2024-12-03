@@ -1,6 +1,8 @@
 <!doctype html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,700;1,200;1,300;1,400;1,500;1,700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -8,8 +10,29 @@
   <script src="index.js" type="module" defer></script>
 </head>
 <body class="on">
-  <div style="display:none" class="modal" id="overlay-modal">
-    <p>On/Off is for desktop devices only. <a style="color: black;" href="https://pinnie.mypinata.cloud/ipfs/QmWfB3dUW5FbdTKqDzvS95zHJzKq1L6sfBPLG9c3vwKg2G?stream=true" target="_blank" rel="noreferrer noopener">Watch the video</a> explaining how Pinata used this game, Pinata submarine, and NFTs to show off NFT token gating of content.</p>
+  <div class="touch-screen">
+    <button id="up-button">
+      <svg class="control-buttons" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75 12 3m0 0 3.75 3.75M12 3v18" />
+      </svg>      
+    </button>
+    <div id="direction-and-toggle">
+      <button id="left-button">
+        <svg class="control-buttons" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+        </svg>        
+      </button>
+      <button id="toggle-button">
+        <svg class="control-buttons" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+        </svg>
+      </button>
+      <button id="right-button">
+        <svg class="control-buttons" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+      </button>
+    </div>
   </div>
   <div style="display:none" class="modal" id="watch-video">
     <p><a style="color: #ff009e;" href="https://pinnie.mypinata.cloud/ipfs/QmWfB3dUW5FbdTKqDzvS95zHJzKq1L6sfBPLG9c3vwKg2G?stream=true" target="_blank" rel="noreferrer noopener">Watch the video</a> explaining how Pinata used this game, Pinata Submarine, and NFTs to show off NFT token gating of content.</p>
@@ -19,15 +42,15 @@
     <path class="light" d="M188 192h40v-64h-40v64zm0 16h-16v-96h72v96h-56zm128-80h-40v80h-16v-96h72v96h-16v-80z"/>
     <path class="dark" d="M540 128v24h40v16h-40v40h-16v-96h72v16h-56zm-88 24h40v16h-40v40h-16v-96h72v16h-56v24zm-48-24h-40v64h40v-64zm16 0v80h-72v-96h72v16z"/>
     <g class="menu">
-      <g class="item">
+      <g id="start-button" class="item">
         <path class="text" d="M355 306v7h-4v-16h10v16h-2v-7h-4zm0-2h4v-5h-4v5zm56 2v7h-4v-16h10v16h-2v-7h-4zm0-2h4v-5h-4v5zm-44 2v7h-4v-16h10v9h-2v7h-2v-7h-2zm0-2h4v-5h-4v5zm36 2h-2v-2h4v9h-10v-16h10v2h-6v12h4v-5zm32-2h4v2h-4v5h6v2h-10v-16h10v2h-6v5zm-16-7h10v16h-2v-14h-1v14h-2v-14h-1v14h-4v-16zm-82 7v9h-10v-2h8v-5h-8v-9h10v2h-6v5h6zm5-5h-3v-2h10v2h-3v14h-4v-14zm36 0h-3v-2h10v2h-3v14h-4v-14z"/>
         <path class="stars" d="M457 308.4l-3.1 1.5h-.6a.5.5 0 0 1-.2-.5l.6-3.3-2.5-2.4a.5.5 0 0 1-.2-.5c0-.2.3-.4.5-.4l3.4-.5 1.6-3a.6.6 0 0 1 1 0l1.6 3 3.4.5c.2 0 .4.2.5.4 0 .2 0 .4-.2.5l-2.5 2.4.6 3.3c0 .2 0 .4-.2.5h-.6l-3.1-1.5zm-146 0l-3.1 1.5h-.6a.5.5 0 0 1-.2-.5l.6-3.3-2.5-2.4a.5.5 0 0 1-.2-.5c0-.2.3-.4.5-.4l3.4-.5 1.6-3a.6.6 0 0 1 1 0l1.6 3 3.4.5c.2 0 .4.2.5.4 0 .2 0 .4-.2.5l-2.5 2.4.6 3.3c0 .2 0 .4-.2.5h-.6l-3.1-1.5z"/>
       </g>
-      <g class="item">
+      <g id="controls-button" class="item">
         <path class="text" d="M389 338v7h-4v-16h10v9h-2v7h-2v-7h-2zm0-2h4v-5h-4v5zm-28-7h10v16h-2v-14h-4v14h-4v-16zm70 7v9h-10v-2h8v-5h-8v-9h10v2h-6v5h6zm-55-5h-3v-2h10v2h-3v14h-4v-14zm-35 0v12h6v2h-10v-16h10v2h-6zm12 0v12h4v-12h-4zm-4-2h10v16h-10v-16zm52 2v12h4v-12h-4zm-4-2h10v16h-10v-16zm16 14h6v2h-10v-16h4v14z"/>
         <path class="stars" d="M447 341.4l-3.1 1.5h-.6a.5.5 0 0 1-.2-.5l.6-3.3-2.5-2.4a.5.5 0 0 1-.2-.5c0-.2.3-.4.5-.4l3.4-.5 1.6-3a.6.6 0 0 1 1 0l1.6 3 3.4.5c.2 0 .4.2.5.4 0 .2 0 .4-.2.5l-2.5 2.4.6 3.3c0 .2 0 .4-.2.5h-.6l-3.1-1.5zm-126 0l-3.1 1.5h-.6a.5.5 0 0 1-.2-.5l.6-3.3-2.5-2.4a.5.5 0 0 1-.2-.5c0-.2.3-.4.5-.4l3.4-.5 1.6-3a.6.6 0 0 1 1 0l1.6 3 3.4.5c.2 0 .4.2.5.4 0 .2 0 .4-.2.5l-2.5 2.4.6 3.3c0 .2 0 .4-.2.5h-.6l-3.1-1.5z"/>
       </g>
-      <g class="item">
+      <g id="editor-button" class="item">
         <path class="text" d="M413 373v7h-4v-16h10v9h-2v7h-2v-7h-2zm0-2h4v-5h-4v5zm-60 0h4v2h-4v5h6v2h-10v-16h10v2h-6v5zm23 7v-12h-3v-2h10v2h-3v12h3v2h-10v-2h3zm12-12h-3v-2h10v2h-3v14h-4v-14zm13 0v12h4v-12h-4zm0-2h6v16h-10v-16h4zm-36 2v12h4v-12h-4zm0-2h6v16h-10v-16h4z" opacity=".2"/>
         <path class="stars" d="M435 376.4l-3.1 1.5h-.6a.5.5 0 0 1-.2-.5l.6-3.3-2.5-2.4a.5.5 0 0 1-.2-.5c0-.2.3-.4.5-.4l3.4-.5 1.6-3a.6.6 0 0 1 1 0l1.6 3 3.4.5c.2 0 .4.2.5.4 0 .2 0 .4-.2.5l-2.5 2.4.6 3.3c0 .2 0 .4-.2.5h-.6l-3.1-1.5zm-102 0l-3.1 1.5h-.6a.5.5 0 0 1-.2-.5l.6-3.3-2.5-2.4a.5.5 0 0 1-.2-.5c0-.2.3-.4.5-.4l3.4-.5 1.6-3a.6.6 0 0 1 1 0l1.6 3 3.4.5c.2 0 .4.2.5.4 0 .2 0 .4-.2.5l-2.5 2.4.6 3.3c0 .2 0 .4-.2.5h-.6l-3.1-1.5z"/>
       </g>

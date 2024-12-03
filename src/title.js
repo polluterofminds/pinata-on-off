@@ -11,6 +11,14 @@ export default class Title extends Body {
     this.game = game
     this.items = [].slice.call(this.element.querySelectorAll('.menu .item'))
     this.selected = START
+    this.items.forEach((item, index) => {
+      item.addEventListener('click', () => {
+          // Update the selected item
+          this.selected = index
+          // Trigger the choose function
+          this.choose()
+      })
+    })
   }
 
   keydown ({key}) {
